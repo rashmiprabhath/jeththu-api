@@ -14,7 +14,7 @@ public class TestTableService
     @Autowired
     private TestTableRepository testTableRepository;
 
-    public void addTest( String id, String name )
+    public void addTest( int id, String name )
     {
         TestTable testTable = new TestTable();
         testTable.setId( id );
