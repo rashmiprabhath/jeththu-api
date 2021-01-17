@@ -141,8 +141,8 @@ CREATE TABLE IF NOT EXISTS `jeththu`.`order_item` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-create table `jeththu`.`test` (`id` INT, `name` VARCHAR(10),primary key(`iditemitemintem_id`));
-
+create table `jeththu`.`test` (`id` INT, `name` VARCHAR(20),primary key(`iditemitemintem_id`));
+insert into `test` values(1, 'Jeththu Products');
 
 
 
