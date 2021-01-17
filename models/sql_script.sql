@@ -103,14 +103,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `jeththu`.`Payment_history`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jeththu`.`Payment_history` (
+CREATE TABLE IF NOT EXISTS `jeththu`.`payment_history` (
   `payment_id` INT NOT NULL,
   `amount` DECIMAL(9,2) NOT NULL,
   `paid_date` DATETIME NULL,
   `jet_order_id` INT NOT NULL,
   PRIMARY KEY (`payment_id`),
-  INDEX `fk_Payment_history_jet_order1_idx` (`jet_order_id` ASC) VISIBLE,
-  CONSTRAINT `fk_Payment_history_jet_order1`
+  INDEX `fk_payment_history_jet_order1_idx` (`jet_order_id` ASC) VISIBLE,
+  CONSTRAINT `fk_payment_history_jet_order1`
     FOREIGN KEY (`jet_order_id`)
     REFERENCES `jeththu`.`jet_order` (`jet_order_id`)
     ON DELETE NO ACTION
@@ -140,6 +140,10 @@ CREATE TABLE IF NOT EXISTS `jeththu`.`order_item` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+create table `jeththu`.`test` (`id` INT, `name` VARCHAR(10),primary key(`iditemitemintem_id`));
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
