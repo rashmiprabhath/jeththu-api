@@ -6,6 +6,8 @@ import srdp.projects.jeththu.api.entity.Test;
 import srdp.projects.jeththu.api.models.TestTableModel;
 import srdp.projects.jeththu.api.services.TestTableService;
 
+import java.util.List;
+
 /**
  * Copyright (c) 2018 CodeGen International (pvt) Ltd.
  * demo: ProductController
@@ -13,23 +15,25 @@ import srdp.projects.jeththu.api.services.TestTableService;
  * Date: 20. Feb. 2020
  */
 @RestController
-@RequestMapping( "/products" )
+@RequestMapping( "/test" )
 public class TestTableController
 {
     @Autowired
     private TestTableService testTableService;
 
-    @CrossOrigin( origins = "http://localhost:4200" )
     @GetMapping
-    public TestTableModel getName()
-    {
-        return new TestTableModel( 1,"Jeththu Products" );
-    }
-
-    @CrossOrigin( origins = "http://localhost:4200" )
-    @GetMapping( "/test" )
     public TestTableModel getTestTable( @RequestParam( value = "id" ) int id )
     {
-        return testTableService.getTestTable( id );
+        return this.testTableService.getTestTable( id );
+    }
+
+    @GetMapping( "/all" )
+    public List<TestTableModel> getAll(){
+        return this.testTableService.getAll();
+    }
+
+    @PostMapping
+    public void saveTest( @RequestParam( value = "name") String name ){
+        this.testTableService.addTest( name );
     }
 }

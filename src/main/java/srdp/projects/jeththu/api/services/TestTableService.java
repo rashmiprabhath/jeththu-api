@@ -8,6 +8,7 @@ import srdp.projects.jeththu.api.repository.TestTableRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 // this class provide all product services.
 @Service
@@ -16,10 +17,9 @@ public class TestTableService
     @Autowired
     private TestTableRepository testTableRepository;
 
-    public void addTest( int id, String name )
+    public void addTest( String name )
     {
         Test test = new Test();
-        test.setId( id );
         test.setName( name );
 
         this.testTableRepository.save( test );
@@ -29,6 +29,12 @@ public class TestTableService
     {
         Optional<Test> testOptional =  this.testTableRepository.findById( id );
         return testOptional.map( t -> new TestTableModel( t.getId(), t.getName() ) ).orElse( null );
+    }
+
+    public List<TestTableModel> getAll(){
+        return this.testTableRepository.findAll().stream()
+                                       .map( t -> new TestTableModel( t.getId(), t.getName() ) )
+                                       .collect( Collectors.toList());
     }
 
 }
