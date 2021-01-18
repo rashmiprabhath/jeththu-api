@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 public class JetOrder {
 
   @Id
+  @GeneratedValue( strategy = GenerationType.IDENTITY )
   @Column( name  = "jet_order_id" )
   private int orderId;
   @Column( name  = "order_date" )

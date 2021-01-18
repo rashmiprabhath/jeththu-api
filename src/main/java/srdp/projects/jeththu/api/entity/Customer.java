@@ -1,15 +1,13 @@
 package srdp.projects.jeththu.api.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cutomer")
 public class Customer {
 
   @Id
+  @GeneratedValue( strategy = GenerationType.IDENTITY )
   @Column( name  = "customer_id" )
   private int customerId;
   @Column( name  = "name" )

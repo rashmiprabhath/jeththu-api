@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 public class PaymentHistory {
 
   @Id
+  @GeneratedValue( strategy = GenerationType.IDENTITY )
   @Column( name  = "payment_id" )
   private int paymentId;
   @Column( name  = "amount" )
