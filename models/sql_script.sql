@@ -21,7 +21,7 @@ USE `jeththu` ;
 -- Table `jeththu`.`cutomer`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jeththu`.`cutomer` (
-  `customer_id` INT NOT NULL,
+  `customer_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `gender` VARCHAR(10) NULL,
   `address` VARCHAR(250) NULL,
@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 -- Table `jeththu`.`order_status`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jeththu`.`order_status` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(20) NOT NULL,
   `description` VARCHAR(100) NULL,
   PRIMARY KEY (`id`),
@@ -46,7 +46,7 @@ ENGINE = InnoDB;
 -- Table `jeththu`.`payment_status`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jeththu`.`payment_status` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(20) NOT NULL,
   `description` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 -- Table `jeththu`.`jet_order`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jeththu`.`jet_order` (
-  `jet_order_id` INT NOT NULL,
+  `jet_order_id` INT NOT NULL AUTO_INCREMENT,
   `order_date` DATETIME NULL,
   `due_date` DATETIME NULL,
   `Description` VARCHAR(200) NULL,
@@ -93,7 +93,7 @@ ENGINE = InnoDB;
 -- Table `jeththu`.`item`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jeththu`.`item` (
-  `intem_id` INT NOT NULL,
+  `intem_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `details` VARCHAR(200) NULL,
   PRIMARY KEY (`intem_id`))
@@ -104,7 +104,7 @@ ENGINE = InnoDB;
 -- Table `jeththu`.`Payment_history`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jeththu`.`payment_history` (
-  `payment_id` INT NOT NULL,
+  `payment_id` INT NOT NULL AUTO_INCREMENT,
   `amount` DECIMAL(9,2) NOT NULL,
   `paid_date` DATETIME NULL,
   `jet_order_id` INT NOT NULL,
@@ -141,8 +141,12 @@ CREATE TABLE IF NOT EXISTS `jeththu`.`order_item` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-create table `jeththu`.`test` (`id` INT, `name` VARCHAR(20),primary key(`iditemitemintem_id`));
-insert into `test` values(1, 'Jeththu Products');
+-- -----------------------------------------------------
+-- set primary keys auto incremented.
+-- -----------------------------------------------------
+
+create table `jeththu`.`test` (`id` INT AUTO_INCREMENT, `name` VARCHAR(20),primary key(`iditemitemintem_id`));
+-- insert into `test` values(1, 'Jeththu Products');
 
 
 
