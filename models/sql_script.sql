@@ -145,7 +145,7 @@ ENGINE = InnoDB;
 -- set primary keys auto incremented.
 -- -----------------------------------------------------
 
-create table `jeththu`.`test` (`id` INT AUTO_INCREMENT, `name` VARCHAR(20),primary key(`iditemitemintem_id`));
+create table `jeththu`.`test` (`id` INT AUTO_INCREMENT, `name` VARCHAR(20),primary key(`id`));
 -- insert into `test` values(1, 'Jeththu Products');
 
 
