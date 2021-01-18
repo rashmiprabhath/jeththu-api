@@ -1,18 +1,28 @@
-package com.sample;
+package srdp.projects.jeththu.api.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "payment_status")
 public class PaymentStatus {
 
-  private String id;
+  @Id
+  @Column( name  = "id" )
+  private int id;
+  @Column( name  = "name" )
   private String name;
+  @Column( name  = "description" )
   private String description;
 
 
-  public String getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(int id) {
     this.id = id;
   }
 

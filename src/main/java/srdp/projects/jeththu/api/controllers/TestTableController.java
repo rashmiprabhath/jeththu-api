@@ -2,7 +2,7 @@ package srdp.projects.jeththu.api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import srdp.projects.jeththu.api.entity.TestTable;
+import srdp.projects.jeththu.api.entity.Test;
 import srdp.projects.jeththu.api.models.TestTableModel;
 import srdp.projects.jeththu.api.services.TestTableService;
 
@@ -23,12 +23,12 @@ public class TestTableController
     @GetMapping
     public TestTableModel getName()
     {
-        return new TestTableModel( "Jeththu Products" );
+        return new TestTableModel( 1,"Jeththu Products" );
     }
 
     @CrossOrigin( origins = "http://localhost:4200" )
     @GetMapping( "/test" )
-    public TestTable getTestTable( @RequestParam( value = "id" ) String id )
+    public TestTableModel getTestTable( @RequestParam( value = "id" ) int id )
     {
         return testTableService.getTestTable( id );
     }

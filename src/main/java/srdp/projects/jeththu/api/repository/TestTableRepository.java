@@ -2,12 +2,12 @@ package srdp.projects.jeththu.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import srdp.projects.jeththu.api.entity.TestTable;
+import srdp.projects.jeththu.api.entity.Test;
 
-import java.util.List;
+import java.util.Optional;
 
 @Repository
-public interface TestTableRepository extends JpaRepository<TestTable,String>
+public interface TestTableRepository extends JpaRepository<Test,Integer>
 {
-    List<TestTable> findAllById( String id );
+    Optional<Test> findById( Integer id );
 }

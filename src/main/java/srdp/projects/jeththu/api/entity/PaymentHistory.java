@@ -1,57 +1,58 @@
-package com.sample;
+package srdp.projects.jeththu.api.entity;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
 
+@Entity
+@Table(name = "Payment_history")
 public class PaymentHistory {
 
-  private String paymentId;
-  private String orderId;
-  private String amount;
-  private java.sql.Date paidDate;
-  private String paymentStatus;
+  @Id
+  @Column( name  = "payment_id" )
+  private int paymentId;
+  @Column( name  = "amount" )
+  private BigDecimal amount;
+  @Column( name  = "paid_date" )
+  private java.sql.Timestamp paidDate;
 
+    @ManyToOne
+    @JoinColumn(name="jet_order_id", nullable=false)
+    private JetOrder order;
 
-  public String getPaymentId() {
+  public int getPaymentId() {
     return paymentId;
   }
 
-  public void setPaymentId(String paymentId) {
+  public void setPaymentId(int paymentId) {
     this.paymentId = paymentId;
   }
 
 
-  public String getOrderId() {
-    return orderId;
+  public JetOrder getOrder() {
+    return order;
   }
 
-  public void setOrderId(String orderId) {
-    this.orderId = orderId;
+  public void setOrder( JetOrder order ) {
+    this.order = order;
   }
 
 
-  public String getAmount() {
+  public BigDecimal getAmount() {
     return amount;
   }
 
-  public void setAmount(String amount) {
+  public void setAmount(BigDecimal amount) {
     this.amount = amount;
   }
 
 
-  public java.sql.Date getPaidDate() {
+  public java.sql.Timestamp getPaidDate() {
     return paidDate;
   }
 
-  public void setPaidDate(java.sql.Date paidDate) {
+  public void setPaidDate(java.sql.Timestamp paidDate) {
     this.paidDate = paidDate;
   }
 
-
-  public String getPaymentStatus() {
-    return paymentStatus;
-  }
-
-  public void setPaymentStatus(String paymentStatus) {
-    this.paymentStatus = paymentStatus;
-  }
 
 }

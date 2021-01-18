@@ -6,22 +6,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table( name = "TEST_TABLE" )
-public class TestTable
+@Table( name = "test" )
+public class Test
 {
     @Id
-    @Column( name = "ID" )
-    private String id;
+    @Column( name = "id" )
+    private int id;
 
-    @Column( name = "NAME" )
+    @Column( name = "name" )
     private String name;
 
-    public String getId()
+    public int getId()
     {
         return id;
     }
 
-    public void setId( String id )
+    public void setId( int id )
     {
         this.id = id;
     }

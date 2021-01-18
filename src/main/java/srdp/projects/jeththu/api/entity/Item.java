@@ -1,18 +1,28 @@
-package com.sample;
+package srdp.projects.jeththu.api.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "item")
 public class Item {
 
-  private String itemId;
+  @Id
+  @Column( name  = "intem_id" )
+  private int itemId;
+  @Column( name  = "name" )
   private String name;
+  @Column( name  = "details" )
   private String details;
 
 
-  public String getItemId() {
+  public int getItemId() {
     return itemId;
   }
 
-  public void setItemId(String itemId) {
+  public void setItemId(int itemId) {
     this.itemId = itemId;
   }
 

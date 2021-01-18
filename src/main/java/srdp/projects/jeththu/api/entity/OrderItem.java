@@ -1,27 +1,21 @@
-package com.sample;
+package srdp.projects.jeththu.api.entity;
 
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "order_item")
 public class OrderItem {
 
-  private String orderId;
-  private String itemId;
+  @EmbeddedId
+  private OrderItemId orderId;
 
 
-  public String getOrderId() {
+  public OrderItemId getOrderId() {
     return orderId;
   }
 
-  public void setOrderId(String orderId) {
+  public void setOrderId(OrderItemId orderId) {
     this.orderId = orderId;
   }
-
-
-  public String getItemId() {
-    return itemId;
-  }
-
-  public void setItemId(String itemId) {
-    this.itemId = itemId;
-  }
-
 }

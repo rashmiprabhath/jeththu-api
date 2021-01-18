@@ -1,20 +1,32 @@
-package com.sample;
+package srdp.projects.jeththu.api.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "cutomer")
 public class Customer {
 
-  private String customerId;
+  @Id
+  @Column( name  = "customer_id" )
+  private int customerId;
+  @Column( name  = "name" )
   private String name;
+  @Column( name  = "gender" )
   private String gender;
+  @Column( name  = "address" )
   private String address;
+  @Column( name  = "contact_number" )
   private String contactNumber;
 
 
-  public String getCustomerId() {
+  public int getCustomerId() {
     return customerId;
   }
 
-  public void setCustomerId(String customerId) {
+  public void setCustomerId(int customerId) {
     this.customerId = customerId;
   }
 
